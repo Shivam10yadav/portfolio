@@ -121,7 +121,7 @@ export const Hero = () => {
               {/* Glow Effect */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
 
-              <div className="relative glass rounded-3xl p-2 glow-border">
+              <div className="relative glass rounded-3xl p-2 glow-border transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/30">
                 <img
                   src="/profile.png"
                   alt="Shivam Yadav"
