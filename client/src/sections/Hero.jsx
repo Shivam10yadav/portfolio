@@ -10,25 +10,31 @@ import {
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
-const skills = [
+const SKILLS = [
   "React",
-  "Express.Js",
   "Node.js",
-  "Javascript",
+  "Express.js",
   "MongoDB",
-  "Docker",
-  "Vercel",
-  "Html 5",
   "Tailwind CSS",
-  "Socket.io",
+  "Docker",
   "Git",
   "GitHub",
+  "Socket.io",
+  "JavaScript",
+  "Vercel",
+  "HTML5",
 ];
 
 export const Hero = () => {
+  const firstRow = SKILLS.slice(0, 6);
+  const secondRow = SKILLS.slice(6);
+
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Layer */}
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
+      {/* Background */}
       <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
@@ -38,54 +44,35 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
       </div>
 
-      {/* Animated Green Dots */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
-            style={{
-              backgroundColor: "#20B2A6",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Main Content */}
       <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+        {/* HERO CONTENT */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Left Column - Text Content */}
+          {/* LEFT */}
           <div className="space-y-8">
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software Developer • MERN Specialist
+                Software Developer • MERN Stack
               </span>
             </div>
 
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Creating <span className="text-primary glow-text">Full Stack</span>
-                <br />
-                Solutions with
-                <br />
-                <span className="font-serif italic font-normal text-white">
-                  Passion.
-                </span>
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Shivam Yadav — a software developer specializing in
-                MERN Technologies. I build scalable, performant web
-                applications that users love.
-              </p>
-            </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+              Creating <span className="text-primary">Full Stack</span>
+              <br />
+              Solutions with
+              <br />
+              <span className="font-serif italic font-normal text-white">
+                Passion.
+              </span>
+            </h1>
 
-            {/* Call to Actions */}
+            <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+              Hi, I'm Shivam Yadav — a software developer specializing in MERN
+              Technologies. I build scalable, performant web applications that
+              users love.
+            </p>
+
+            {/* CTA */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
               <a href="#contact">
                 <Button size="lg">
@@ -93,12 +80,7 @@ export const Hero = () => {
                 </Button>
               </a>
 
-              {/* DOWNLOAD CV IMPLEMENTATION */}
-              <a 
-                href="/cv.pdf" 
-                download="Shivam_Yadav_CV.pdf"
-                className="inline-block"
-              >
+              <a href="/cv.pdf" download>
                 <AnimatedBorderButton>
                   <Download className="w-5 h-5 mr-2" />
                   Download CV
@@ -106,21 +88,26 @@ export const Hero = () => {
               </a>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow me: </span>
+            {/* SOCIAL */}
+            <div className="flex gap-4 animate-fade-in animation-delay-400">
               {[
                 { icon: Github, href: "https://github.com/Shivam10yadav" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/shivam-yadav-15851328b" },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/shivam-yadav-15851328b",
+                },
                 { icon: Twitter, href: "https://x.com/Y80Shivam" },
-                { icon: Instagram, href: "https://www.instagram.com/shivam05_10" },
-              ].map((social, idx) => (
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/shivam05_10",
+                },
+              ].map((social, i) => (
                 <a
-                  key={idx}
+                  key={i}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  className="p-2 rounded-full glass hover:text-primary transition"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -128,70 +115,89 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Profile Image */}
+          {/* RIGHT */}
           <div className="relative animate-fade-in animation-delay-300">
             <div className="relative max-w-md mx-auto">
               {/* Glow Effect */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
-              
+
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
                   src="/profile.png"
                   alt="Shivam Yadav"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
-
-                {/* Floating Badge - Available */}
                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium">Available for work</span>
+                    <span className="text-sm font-medium">
+                      Available for work
+                    </span>
                   </div>
                 </div>
-
-                {/* Floating Badge - Stats */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-xl font-bold text-primary">Building & Learning</div>
-                  <div className="text-xs text-muted-foreground">Full Stack Apps</div>
+                  <div className="text-xl font-bold text-primary">
+                    Building & Learning
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    Full Stack Apps
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Skills Marquee Section */}
-        <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center uppercase tracking-widest">
+        {/* 🚀 SKILLS CARD MARQUEE */}
+        <div className="mt-24 space-y-8">
+          <p className="text-sm text-muted-foreground text-center uppercase tracking-widest">
             Technologies I work with
           </p>
+
+          {/* Row 1 → */}
           <div className="relative overflow-hidden">
-            {/* Gradients for fading effect on edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
-            
-            <div className="flex animate-marquee">
-              {[...skills, ...skills].map((skill, idx) => (
-                <div key={idx} className="flex-shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/30 hover:text-primary transition-colors cursor-default">
-                    {skill}
-                  </span>
-                </div>
+            <div className="flex gap-6 animate-marquee marquee-pause">
+              {[...firstRow, ...firstRow].map((skill, i) => (
+                <SkillCard key={i} name={skill} />
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2 ← */}
+          <div className="relative overflow-hidden">
+            <div className="flex gap-6 animate-marquee-reverse marquee-pause">
+              {[...secondRow, ...secondRow].map((skill, i) => (
+                <SkillCard key={i} name={skill} />
               ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
-        <a
-          href="#about"
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
-        >
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
-          <ChevronDown className="w-6 h-6 animate-bounce" />
-        </a>
+      {/* Scroll */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <ChevronDown className="w-6 h-6 animate-bounce text-muted-foreground" />
       </div>
     </section>
+  );
+};
+
+/* Skill Card */
+const SkillCard = ({ name }) => {
+  return (
+    <div
+      className="
+        min-w-[160px] h-[110px]
+        glass rounded-xl
+        flex items-center justify-center
+        text-lg font-semibold text-primary
+        transform transition-all duration-300
+        hover:-translate-y-2 hover:scale-105
+        hover:shadow-xl hover:shadow-primary/20
+        cursor-default
+      "
+    >
+      {name}
+    </div>
   );
 };

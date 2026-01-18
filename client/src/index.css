@@ -196,3 +196,77 @@
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
 }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Desktop */
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 18s linear infinite;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 12s;
+  }
+  .animate-marquee-reverse {
+    animation-duration: 12s;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .animate-marquee {
+    animation-duration: 8s;
+  }
+  .animate-marquee-reverse {
+    animation-duration: 8s;
+  }
+}
+.marquee-pause:hover {
+  animation-play-state: paused;
+}
+
+.marquee-pause:active {
+  animation-play-state: paused;
+}

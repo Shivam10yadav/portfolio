@@ -87,7 +87,7 @@ export const Services = () => {
                       : "md:col-start-2 md:pl-16"
                   }`}
                 >
-                  <div className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500">
+                  <div className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 cursor-pointer">
                     <span className="text-sm text-primary font-medium">
                       {service.period}
                     </span>
