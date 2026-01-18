@@ -33,7 +33,7 @@ export const Footer = () => {
               Shivam Yadav<span className="text-primary">.</span>
             </a>
             <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} @Shivam Yadav. All rights reserved.
+              © {currentYear} Shivam Yadav. All rights reserved.
             </p>
           </div>
 
