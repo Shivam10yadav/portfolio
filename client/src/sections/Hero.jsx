@@ -23,6 +23,9 @@ const SKILLS = [
   "JavaScript",
   "Vercel",
   "HTML5",
+  "Kubernetes",
+  "Zustand",
+  "Framer Motion"
 ];
 
 export const Hero = () => {

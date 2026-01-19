@@ -18,6 +18,7 @@ const footerLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#services", label: "Service" },
+  { href: "#certificates", label: "Certificates" },
 ];
 
 export const Footer = () => {
