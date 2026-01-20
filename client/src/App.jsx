@@ -24,29 +24,30 @@ function App() {
         </ScrollAnimation>
         
         {/* Projects - Coming from right of screen */}
-        <ScrollAnimation variant="slideRight" delay={0.1}>
+        <ScrollAnimation variant="blur" delay={0.1}>
           <Projects />
         </ScrollAnimation>
         
         {/* Services - Scale animation for card pop out effect */}
-        <ScrollAnimation variant="scale" delay={0.1}>
+            <ScrollAnimation variant="blur" delay={0.1}>
           <Services />
         </ScrollAnimation>
         
-         <ScrollAnimation variant="scale" delay={0.1}>
+         <ScrollAnimation variant="blur" delay={0.1}>
  <Certificates/>
          </ScrollAnimation>
       
         
         {/* Contact - Coming from left of screen */}
-        <ScrollAnimation variant="slideLeft" delay={0.1}>
+        <ScrollAnimation variant="blur" delay={0.1}>
           <Contact />
         </ScrollAnimation>
       </main>
       
       
-      
-        <Footer />
+   <Footer />
+              
+     
     
     </div>
   );
