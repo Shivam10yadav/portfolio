@@ -86,16 +86,16 @@ export const Hero = () => {
               users love.
             </p>
 
-            {/* CTA */}
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-fade-in animation-delay-300">
-              <a href="#contact" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto">
+            {/* CTA - FIXED */}
+<div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+                <a href="#contact" className="inline-block">
+                <Button size="lg" className="inline-flex">
                   Contact Me <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </a>
 
-              <a href="/resume10.pdf" download className="w-full sm:w-auto">
-                <AnimatedBorderButton className="w-full sm:w-auto">
+              <a href="/resume10.pdf" download className="inline-block">
+                <AnimatedBorderButton className="inline-flex">
                   <Download className="w-5 h-5 mr-2" />
                   Download CV
                 </AnimatedBorderButton>
